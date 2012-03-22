@@ -1,0 +1,128 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "rdelmotte",
+            "first_name": "Romain",
+            "last_name": "Delmotte",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2012-02-18 23:29:43",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$ce4b3$82980eea81636a5492d70645e13825a8ef1917fc",
+            "email": "testtest1@yopmail.com",
+            "date_joined": "2012-02-18 17:08:00"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "pdefebvre",
+            "first_name": "Pierre",
+            "last_name": "Defebvre",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-18 17:08:36",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$89f15$18ba7ae0185210a8e7f0f827032896e35fc79bd8",
+            "email": "testtest2@yopmail.com",
+            "date_joined": "2012-02-18 17:08:36"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.user",
+        "fields": {
+            "username": "njls",
+            "first_name": "Nicolas",
+            "last_name": "Jacques Le Seigneur",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-18 17:08:44",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$7de09$a90ce12c56298030b6aece1d288d2e966b0511c9",
+            "email": "testtest3@yopmail.com",
+            "date_joined": "2012-02-18 17:08:44"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.user",
+        "fields": {
+            "username": "fvanderkelen",
+            "first_name": "Fran\u00e7ois",
+            "last_name": "Vanderkelen",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-18 23:37:35",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$31594$352a66eceed477f5fa50f598f8b697af71f43aab",
+            "email": "testtest4@yopmail.com",
+            "date_joined": "2012-02-18 23:37:35"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.user",
+        "fields": {
+            "username": "fgenet",
+            "first_name": "Francis",
+            "last_name": "Genet",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-18 23:38:15",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$858f7$5bf4471af30e3ad310468a07dd9146d5c6c42dff",
+            "email": "testtest5@yopmail.com",
+            "date_joined": "2012-02-18 23:38:15"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.user",
+        "fields": {
+            "username": "bvincent",
+            "first_name": "Baptiste",
+            "last_name": "Vincent",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-18 23:38:36",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$923e0$9a22bf27e4a2fb6f4ad85983ae276d1f354964e1",
+            "email": "testtest6@yopmail.com",
+            "date_joined": "2012-02-18 23:38:36"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.user",
+        "fields": {
+            "username": "tberton",
+            "first_name": "Thomas",
+            "last_name": "Berton",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-18 23:39:00",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$80ba9$b331bd5969fdcc35b796552807f1b86896736941",
+            "email": "testtest7@yopmail.com",
+            "date_joined": "2012-02-18 23:39:00"
+        }
+    }
+]

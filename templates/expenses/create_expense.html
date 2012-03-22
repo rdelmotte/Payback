@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Create expense" %}{% endblock title %}
+
+{% block content %}
+<form method="post" action="">
+    {% csrf_token %}
+    {% include "form_snippet.html" %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form.id }}
+        {% include "form_snippet.html" %}
+    {% endfor %}
+    <button type="submit">{% trans "Create" %}</button>
+</form>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#id_date').datepicker();
+     });
+</script>
+{% endblock %}

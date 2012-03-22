@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Expense list" %}{% endblock %}
+
+{% block content %}
+    {% if expenses %}
+    <ol>
+        {% for expense in expenses %}
+        <li><a href="{% url expenses-expense-detail expense.group.id expense.id %}">{{ expense.name }}</a></li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <div class="alert alert-error">{% trans "No expenses yet." %}</div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "registration/registration_base.html" %}
+{% block title %}Register for an account{% endblock %}
+{% block content %}
+<form method='post' action=''>
+    {% csrf_token %}
+    {% include "form_snippet.html" %}
+    <button>Send activation email</button>
+</form>
+{% endblock %}

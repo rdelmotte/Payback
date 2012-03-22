@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ group.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ group.name }}</h1>
+    <ul>
+        <li><a href="{% url expenses-create-expense group.id %}">{% trans "Add expense" %}</a></li>
+        <li><a href="{% url expenses-expense-list group.id %}">{% trans "List expenses" %}</a></li>
+        <li><a href="{% url expenses-membership-list group.id %}">{% trans "List memberships" %}</a></li>
+        <li><a href="{% url expenses-create-membership group.id %}">{% trans "Add membership" %}</a></li>
+    </ul>
+{% endblock %}

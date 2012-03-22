@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>PayBack · {% block title %}{% endblock %}</title>
+    {% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" type="text/css" />
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    {% comment %}{% include 'setlang.html' %}{% endcomment %}
+    <div class="row">
+        <div class="span3">
+            <div class="well">
+            {% include 'user_nav_menu.html' %}
+            </div>
+        </div>
+        <div class="span9">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% block js %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+{% endblock %}
+</body>
+</html>

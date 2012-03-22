@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Create group" %}{% endblock title %}
+
+{% block content %}
+<form method="post" action="" class="form-horizontal">
+    <fieldset>
+        <legend>{% trans "Group Information" %}</legend>
+        {% if form.non_field_errors %}
+        <ul>
+            {% for error in form.non_field_errors %}
+            <li class="alert alert-error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="control-group{% if form.name.errors %} error{% endif %}">
+            <label class="control-label" for="id_{{ form.name.html_name }}">{{ form.name.label }}</label>
+            <div class="controls">
+                {{ form.name }}
+                {% for error in form.name.errors %}
+                <span class="help-inline">{{ error|escape }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% csrf_token %}
+        <div class="form-actions">
+            <button type="reset" class="btn">{% trans "Reset" %}</button>
+            <button type="submit" class="btn btn-primary">{% trans "Create group" %}</button>
+        </div>
+    </fieldset>
+</form>
+{% endblock %}

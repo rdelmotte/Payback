@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Create membership" %}{% endblock title %}
+
+{% block content %}
+<form method="post" action="" class="from-inline">
+    {% csrf_token %}
+    {{ formset.management_form }}
+
+    {% for form in formset %}
+    {{ form.id }}
+
+    <div class="control-group{% if field.errors %} error{% endif %}">
+        <label class="control-label" for="id_{{ form.user.html_name }}">{{ form.user.label }}</label>
+        <div class="controls">
+            <input id="id_{{ form.user.html_name }}" type="text" name="{{ form.user.html_name }}"/>
+        </div>
+    </div>
+
+    <div class="control-group{% if field.errors %} error{% endif %}">
+        <label class="control-label" for="id_{{ form.can_see_group.html_name }}">{{ form.can_see_group.label }}</label>
+        <div class="controls">
+            {{ form.can_see_group }}
+        </div>
+    </div>
+
+
+    {% endfor %}
+    <button type="submit">{% trans "Add" %}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Group list" %}{% endblock %}
+
+{% block content %}
+    {% if groups %}
+    <ul>
+        <li><a href="{% url expenses-create-group %}">{% trans "Create group" %}</a></li>
+    </ul>
+    <ol>
+        {% for group in groups %}
+        <li><a href="{% url expenses-group-detail group.id %}">{{ group.name }}</a></li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <div class="alert alert-error">{% trans "No groups yet." %}</div>
+    {% endif %}
+{% endblock %}

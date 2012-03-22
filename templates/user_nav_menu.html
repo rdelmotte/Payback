@@ -1,0 +1,20 @@
+{% load i18n %}
+{% if user.is_authenticated %}<h1>{{ user }}</h1>{% endif %}
+<ul class="nav nav-list">
+{% if user.is_authenticated %}
+    <li><a href="{% url expenses-group-list %}">{% trans 'Groups' %}</a></li>
+    <li class="nav-header">User</li>
+    {% if user.is_staff %}
+    <li><a href="/admin/">{% trans 'Admin' %}</a></li>
+    {% endif %}
+    <li><a href="{% url profiles_edit_profile %}">{% trans 'Edit profile' %}</a></li>
+    <li><a href="{% url profiles_profile_detail user.username %}">{% trans 'Profile details' %}</a></li>
+    <li><a href="{% url profiles_profile_list %}">{% trans 'Profile list' %}</a></li>
+    <li><a href="{% url auth_password_change %}">{% trans 'Change password' %}</a></li>
+    <li><a href="{% url auth_logout %}">{% trans 'Logout' %}</a></li>
+{% else %}
+    <li><a href="{% url auth_login %}">{% trans 'Sign in' %}</a></li>
+    <li><a href="{% url registration_register %}">{% trans 'Sign up' %}</a></li>
+    <li><a href="{% url auth_password_reset %}">{% trans 'Reset password' %}</a></li>
+{% endif %}
+</ul>

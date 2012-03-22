@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Group members list" %}{% endblock %}
+
+{% block content %}
+    {% if memberships %}
+    <ol>
+        {% for membership in memberships %}
+        <li>{{ membership.user }}, {{ membership.can_see_group }}</li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <div class="alert alert-error">{% trans "No users yet." %}</div>
+    {% endif %}
+{% endblock %}

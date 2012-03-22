@@ -1,0 +1,40 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="span6">
+        <form method="post" action="{% url django.contrib.auth.views.login %}" class="form-horizontal well">
+            <fieldset>
+                <legend>{% trans "Log in to PayBack" %}</legend>
+                {% if form.errors %}
+                <br />
+                <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <strong>Oh snap!</strong> Your username and password didn't match. Please try again.
+                </div>
+                {% endif %}
+                <div class="control-group{% if form.errors %} error{% endif %}">
+                    <label class="control-label" for="id_{{ form.username.html_name }}">{{ form.username.label }}</label>
+                    <div class="controls">
+                        {{ form.username }}
+                    </div>
+                </div>
+                <div class="control-group{% if form.errors %} error{% endif %}">
+                    <label class="control-label" for="id_{{ form.password.html_name }}">{{ form.password.label }}</label>
+                    <div class="controls">
+                        {{ form.password }}
+                    </div>
+                </div>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}" />
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-large btn-primary">{% trans "Login" %}</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}
